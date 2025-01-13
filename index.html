@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Help victims of the devastating California wildfires. Your donations provide relief and hope to those in need. Act now.">
+    <title>California Wildfire Relief Fund</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+
+        .main-header h1 {
+            font-size: 3rem;
+        }
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .navbar .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+            margin-right: 20px;
+        }
+
+        .navbar .nav-link:hover {
+            color: #d9534f;
+        }
+
+        .hero-section {
+            background: #f5f5f5;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .hero-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section .btn {
+            background-color: #d9534f;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+        }
+
+        .home-reasons, .our-causes, .our-sponsors {
+            padding: 60px 0;
+        }
+
+        .home-reasons img, .our-causes img {
+            width: 100%;
+            height: auto;
+        }
+
+        .our-causes h4, .home-reasons h3 {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .list-sponsors img {
+            width: 150px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 40px 0;
+        }
+
+        footer h4 {
+            color: white;
+        }
+
+        footer form input, footer form textarea {
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        footer .btn {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+        }
+
+         /* Center the container */
+         .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5vh; /* Full viewport height */
+            text-align: center;
+        }
+
+        /* Style for the button */
+        .btn-danger {
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+      
+
+        /* Sliding Background Keyframes */
+        @keyframes slideBackground {
+            0% { background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fnews%2Fnation%2F2025%2F01%2F08%2Fhow-did-california-wildfire-start%2F77540659007%2F&psig=AOvVaw30qaN1THUuc6zxojuy8Sb2&ust=1736772938106000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOCkstqd8IoDFQAAAAAdAAAAABAI'); }
+            5% { background-image: url('https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/rockcms/2025-01/250111-LA-Wildfires-Saturday-4-aa-710-4ac660.jpg'); }
+            10% { background-image: url('https://api.time.com/wp-content/uploads/2025/01/palisades-eaton-fire-los-angeles-california-photos-2025-30.jpg?quality=85&w=1440'); }
+            15% { background-image: url('https://api.time.com/wp-content/uploads/2025/01/palisades-fire-los-angeles-california-photos-2025-01.jpg?quality=75&w=828'); }
+            20% { background-image: url('https://img.resized.co/breaking-news/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL2ltYWdlcy5icmVha2luZ25ld3MuaWVcXFwvcHJvZFxcXC91cGxvYWRzXFxcLzIwMjVcXFwvMDFcXFwvMTAwODE5MTRcXFwvODExNTU3MDZmYjA5NDg0ZTk3NmY5YzA3ZGRiNzVjMDUtMS5qcGdcIixcIndpZHRoXCI6bnVsbCxcImhlaWdodFwiOjM2MCxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3LmJyZWFraW5nbmV3cy5pZVxcXC9pbWFnZXNcXFwvbm8taW1hZ2UucG5nXCIsXCJvcHRpb25zXCI6e1wib3V0cHV0XCI6XCJqcGVnXCJ9fSIsImhhc2giOiI2NzU1MDQ3NjRiYWNhM2VjOTNiYjMxNjQ0ZjlkODZlYzk5ZGRkYmZkIn0=/81155706fb09484e976f9c07ddb75c05-1.jpg'); }
+            25% { background-image: url('https://www.pennlive.com/resizer/v2/PERIJQFUK5GTNOQ37UJSLT6CBA.jpg?auth=ccedf8253347bedfd49134652b2143ff92e435cb164c9d5645c0742fe8ef3669&width=1280&quality=90'); }
+            30% { background-image: url('https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HEQCUKAZYEYGNGCE5AYNB7YSOA.JPG&w=1440'); }
+            35% { background-image: url('https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/B52FXYYU57AVSSZDQLO6L6A6JY.JPG&w=1440&impolicy=high_res'); }
+            40% { background-image: url('https://www.enr.com/ext/resources/images/2020/California_Fire_2020_AP_20253605657365-ENRwebready.jpg?1599692501'); }
+            45% { background-image: url('https://ca-times.brightspotcdn.com/dims4/default/ce7d4f8/2147483647/strip/true/crop/4434x2736+0+0/resize/1200x740!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fe4%2F74%2F11f9829c4168ac7c60af67347f95%2F1489921-me-eaton-fire-16-gmf.jpg'); }
+            50% { background-image: url('https://www.chrislynchmedia.com/wp-content/webp-express/webp-images/uploads/2025/01/IMG_2228.jpeg.webp'); }
+            55% { background-image: url('https://fox5sandiego.com/wp-content/uploads/sites/15/2025/01/GettyImages-2192433370-1.jpg?w=1280'); }
+            60% { background-image: url('https://youtu.be/WxuGCwLB9-k'); }
+            65% { background-image: url('https://e3.365dm.com/25/01/768x432/skynews-altadena-wildfire-satellite_6795224.jpg'); }
+            70% { background-image: url('https://bloximages.newyork1.vip.townnews.com/galvnews.com/content/tncms/assets/v3/editorial/a/e6/ae60c6bf-d208-522f-90c4-d06149d1acce/677f0201f2c49.image.jpg?resize=750%2C500'); }
+            75%{ background-image: url('https://youtu.be/aFEsjY2lrjE'); }
+            80% { background-image: url('https://youtu.be/U6dlHpKE-ug'); }
+            85% { background-image: url('https://media.cnn.com/api/v1/images/stellar/prod/171206124100-02-ca-wildfire-405.jpg?q=w_1920,h_1080,x_0,y_0,c_fill'); }
+            90% { background-image: url('https://i.abcnewsfe.com/a/f5ea5ca2-8d12-4b8b-bee7-864691c51f61/250110_ntl_wildfire_1240_hpMain_16x9.jpg?w=992'); }
+            95% { background-image: url('https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2025/01/931/523/california-fires-mcdonalds-scaled.jpg?ve=1&tl=1'); }
+            100% { background-image: url('https://www.tiktok.com/@semai_ai/video/7458282207166254382?is_from_webapp=1&sender_device=pc'); }
+       
+       
+       
+       
+        }
+
+        /* Main Header Styling */
+        .main-header {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        position: relative;
+        animation: slideBackground 20s infinite linear;
+        background-size: cover;
+        background-position: center;
+    }
+
+        .main-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+            z-index: 1;
+        }
+
+        .main-header h1,
+        .main-header p {
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            position: relative;
+            animation: slideBackground 15s infinite linear;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+            z-index: 1;
+        }
+
+        .hero-section h2,
+        .hero-section p,
+        .hero-section a {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-section .btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            text-decoration: none;
+        }
+
+        .hero-section .btn:hover {
+            background-color: #c9302c;
+        }
+
+            /* Main Header Styling */
+    .main-header {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        position: relative;
+        animation: slideBackground 20s infinite linear;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .main-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+        z-index: 1;
+    }
+
+    .main-header h1,
+    .main-header p {
+        z-index: 2;
+        position: relative;
+    }
+
+    /* Hero Section Styling */
+    .hero-section {
+        padding: 60px 0;
+        text-align: center;
+        color: white;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ), url('https://example.com/background-image.jpg') center/cover no-repeat;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .hero-section .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-section .btn {
+        background-color: #d9534f;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .hero-section .btn:hover {
+        background-color: #c9302c;
+    }
+
+    /* Section Donations Styling */
+    .section-donations {
+        padding: 40px 20px;
+        background: #f8f9fa;
+        text-align: center;
+    }
+
+    .section-donations .section-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .section-donations p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .section-donations img {
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-donations h3 {
+        margin-top: 10px;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .section-donations p {
+        color: #555;
+    }
+
+   
+
+    </style>
+<script src="https://www.paypal.com/sdk/js?client-id=CLIENT_ID"></script>
+
+
+
+</head>
+
+<body>
+
+  
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Wildfire Relief</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                 
+                    <li class="nav-item"><a class="nav-link" href="#causes">Our Causes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                  
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Main Header -->
+<header class="main-header text-center">
+    <div class="container">
+        <h1>California Wildfire Relief</h1>
+        <p>Together, we can bring hope, rebuild lives, and restore communities.</p>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h2>California Is Burning. Your Help is Critical.</h2>
+        <p>
+            Families are fleeing their homes, their lives upended by these devastating wildfires. 
+            Your generous donation provides urgent relief, food, shelter, and hope to those affected, your 10$ might help someone.
+        </p>
+
+    </div>
+</section>
+
+</div>
+
+<!-- Section: Your Impact -->
+<section class="section-donations">
+    <div class="container">
+        <h2 class="section-title text-center">Your Donation Can Save Lives</h2>
+        <p class="text-center">
+            Your support ensures families have access to shelter, clean water, food, and the resources 
+            they need to rebuild their lives. Every 10 dollar counts in this time of urgent need.
+        </p>
+    </div>
+</section>
+<div class="center-container">
+    <a href="https://www.paypal.com/ncp/payment/SMF6XJFYG2RGA">
+        <div id="paypal-donate-button-container" class="btn btn-danger">
+            DONATE NOW
+        </div>
+    </a>
+</div>
+
+</section>
+
+    <!-- Reasons Section -->
+    <section class="home-reasons">
+        <div class="container">
+            <h2 class="text-center">Why We Need Your Help</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="reasons-col">
+                        <img src="https://cpet.tc.columbia.edu/uploads/1/8/4/5/18456699/newsletter-images-for-og-tags-45_orig.png" alt="We fight together">
+                        <h3>Communities in Crisis</h3> <p> Imagine losing everything in an instant—your home, your belongings, your sense of security. Entire neighborhoods have been reduced to rubble, leaving thousands of families without shelter or basic necessities. Mothers, fathers, and children are struggling to find food, clean water, and a safe place to rest. </p> <p> For these families, hope feels out of reach, but you have the power to change that. By acting now, you can bring comfort to the brokenhearted and strength to those who feel powerless. <strong>Every donation makes a difference—every dollar restores a glimmer of hope.</strong> </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="reasons-col">
+                        <img src="https://kandykanelearningcenter.com/wp-content/uploads/2022/07/emergency-response.png" alt="Emergency Response">
+                        <h3>Emergency Response</h3> <p> The situation is urgent. Fires rage on, and the battle to save lives and livelihoods is relentless. Brave firefighters and emergency responders are risking their lives every day, but they can't do it alone. </p> <p> Your donation fuels the heroic efforts of those on the frontlines—providing medical supplies, emergency shelters, and critical support to victims. You’re not just funding relief; you’re saving lives, rebuilding hope, and helping communities rise from the ashes stronger than before. </p> <p> <strong>With your help, we can respond faster, reach farther, and do more for those who need it most. This is your chance to be a hero for someone in crisis.</strong> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="center-container">
+        <a href="https://www.paypal.com/ncp/payment/SMF6XJFYG2RGA">
+            <div id="paypal-donate-button-container" class="btn btn-danger">
+                DONATE NOW
+            </div>
+        </a>
+    </div>
+
+
+    <!-- Causes Section -->
+    <section class="our-causes" id="causes">
+        <div class="container">
+            <h2 class="text-center">How Your Donations Help</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="cause">
+                        <img src="https://giantinflatablesindustrial.com.au/wp-content/uploads/2023/07/emergency_response_shelters_0006_fire_station_comand_centre_exterior.jpg" alt="Emergency Shelter">
+                        <h4>Emergency Shelter</h4> <p> For families forced to flee their homes, the road ahead is uncertain. Your support provides more than just a roof—it offers warmth, safety, and a glimmer of hope during their darkest hours. Safe shelters become sanctuaries where displaced families can find comfort, compassion, and the strength to face tomorrow. <strong>Be the reason someone feels safe tonight.</strong> </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cause">
+                        <img src="https://www.ozharvest.org/app/uploads/2020/10/AB5I0682_NikkiTo-scaled.jpg" alt="Food Supplies">
+                        <h4>Food Relief</h4> <p> When disaster strikes, access to food becomes a critical lifeline. Many evacuees have gone days without a proper meal, unsure of where their next bite will come from. Your contribution ensures that no one goes hungry—providing fresh, nutritious meals to those who need them most. <strong>Every meal you fund is a message of care, compassion, and humanity.</strong> </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cause">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfENsAaWqZp8kPTDUpoOTlWhyHKrlTyp1weA&s" alt="Medical Care">
+                        <h4>Medical Care</h4> <p> Fires don’t just destroy homes; they leave lasting scars on the body and mind. Injuries, smoke inhalation, and stress-related illnesses are rampant. Your donation brings life-saving medical care directly to those in need, offering healing, relief, and hope in the midst of chaos. <strong>Together, we can be the hands that heal and the hearts that care.</strong> </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cause">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG9RlRMtk9kMbPRSCNjn9EcyurkLQ4tl7O7g&s" alt="Rebuilding Homes">
+                        <h4>Rebuilding Homes</h4> <p> A home is more than just walls—it’s a place of memories, love, and belonging. For families who have lost everything, rebuilding is the first step towards reclaiming their lives. Your generosity helps lay the foundation for new beginnings, transforming ashes into opportunities and despair into dreams of a better future. <strong>Let’s rebuild lives, one brick at a time.</strong> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="center-container">
+        <a href="https://www.paypal.com/ncp/payment/SMF6XJFYG2RGA">
+            <div id="paypal-donate-button-container" class="btn btn-danger">
+                DONATE NOW
+            </div>
+        </a>
+    </div>
+
+
+    <!-- Sponsors Section -->
+    <section class="our-sponsors" id="partners">
+        <div class="container">
+            <h2 class="text-center">Our Partners</h2>
+            <ul class="list-sponsors owl-carousel">
+                <div class="col-md-3">
+                <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ0OVDgPY96lniKW2BIeNYl-Nx5aL5j8V4EA&s" alt="UNICEF"></li>
+               </div>
+               
+               <div class="col-md-3">
+                <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRshPVodDmNIN1nvL68x25P6KzNystksdoSGw&s" alt="Red Cross"></li>
+               </div>
+               
+               <div class="col-md-3">
+                <li><img src="https://www.fema.gov/profiles/femad8_gov/themes/fema_uswds/images/fema-logo-blue.svg" alt="FEMA"></li>
+                </div>
+                
+                <div class="col-md-3">
+                <li><img src="https://www.who.int/ResourcePackages/WHO/assets/dist/images/logos/en/h-logo-blue.svg" alt="WHO"></li>
+                </div>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4> <p> At our core, we are a dedicated team of individuals and organizations united by a single mission: to provide rapid, effective disaster relief to those who need it most. From the moment a crisis begins, we mobilize resources, expertise, and compassion to bring immediate support to families facing unimaginable challenges. </p> <p> Our commitment doesn’t end with the initial response. We stay on the ground, working tirelessly to rebuild homes, restore livelihoods, and renew hope in the hearts of affected communities. Whether it’s providing emergency shelter, food, medical care, or long-term recovery programs, we ensure that no one is left behind. </p> <p> <strong>We believe in the power of humanity and the difference we can make when we come together. Your support fuels this mission, helping us create brighter tomorrows for families in crisis today.</strong> </p> <p> Join us in making a lasting impact. Together, we can turn compassion into action and bring light to even the darkest moments. </p>
+                </div>
+
+              <div class="col-md-8" id="contact">
+                <h4>Contact Us</h4>
+                <form action="success.html" method="GET"> <!-- Form now directly redirects to success.html -->
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+            
+          
+            
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

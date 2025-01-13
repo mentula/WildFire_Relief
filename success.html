@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - Message Sent</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body class="text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="modal-content mt-5">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Message Sent Successfully!</h4>
+                        <p>You will be redirected back to the donation page in <span id="countdown">7</span> seconds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown logic
+        var countdown = 7;
+        var countdownElement = document.getElementById("countdown");
+
+        // Decrease the countdown every second
+        var countdownInterval = setInterval(function() {
+            countdown--;
+            countdownElement.textContent = countdown;
+
+            if (countdown === 0) {
+                clearInterval(countdownInterval);
+                // Redirect to donation page when countdown reaches 0
+                window.location.href = "index.html";  // Change this to your donation page
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
